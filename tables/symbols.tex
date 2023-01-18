@@ -1,0 +1,155 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+
+\title{CS 40 Symbol Table}
+\author{Kevin Burk}
+\date{Winter 2023}
+
+\begin{document}
+
+\maketitle
+
+This is a quick reference guide for most of the mathematical symbols you'll encounter in this class.
+Be aware that some symbols have multiple meanings; the correct interpretation should (hopefully) be obvious from the context.
+
+I've also included the \LaTeX{} code for each symbol.
+You're not required to use \LaTeX{} for your assignments, but it is recommended: it saves the graders from your horrible, horrible handwriting, it can make your proofs up to 37\% more true,\footnote{\url{https://xkcd.com/1301/}} and it'll come in handy if you end up in the purgatory that is writing research papers.
+\LaTeX{} is available on the CSIL computers, or online at Overleaf.\footnote{\url{https://www.overleaf.com}}
+
+For a more complete list of symbols, see the Online Encyclopedia of Integer Sequences wiki.\footnote{\url{https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols}}
+That page claims that all of these symbols are predefined in a vanilla \LaTeX{} install, but I've found that a few---notably \texttt{{\textbackslash}emptyset} and \texttt{{\textbackslash}varnothing}---require the \texttt{amssymb} package.
+
+
+\section{Numbers}
+
+\renewcommand{\arraystretch}{1.2}
+\begin{tabularx}{\textwidth}{ccX}
+    Symbol & \LaTeX & Meaning \\
+    \hline
+    $\mathbb{B}$ & \texttt{{\textbackslash}mathbb\{B\}} & The Booleans: \{T, F\} \\
+    $\mathbb{N}$ & \texttt{{\textbackslash}mathbb\{N\}} & The natural numbers: \{0, 1, 2, 3, ...\} \\
+    $\mathbb{Z}$ & \texttt{{\textbackslash}mathbb\{Z\}} & The integers: \{..., -3, -2, -1, 0, 1, 2, 3, ...\} \\
+    $\mathbb{Z}^+$ & \texttt{{\textbackslash}mathbb\{Z\}\textasciicircum+} & The positive integers: \{1, 2, 3, ...\} \\
+    $\mathbb{Z}^-$ & \texttt{{\textbackslash}mathbb\{Z\}\textasciicircum-} & The negative integers: \{..., -3, -2, -1\} \\
+    $\mathbb{Q}$ & \texttt{{\textbackslash}mathbb\{Q\}} & The rational numbers. \\
+    $\mathbb{R}$ & \texttt{{\textbackslash}mathbb\{R\}} & The real numbers. \\
+    $\mathbb{C}$ & \texttt{{\textbackslash}mathbb\{C\}} & The complex numbers. \\
+    $\mathbb{Z}/n$ & \texttt{{\textbackslash}mathbb\{Z\}/n} & Congruence classes modulo $n$. \\
+    $\mathbb{U}$ & \texttt{{\textbackslash}mathbb\{U\}} & The universe; the domain of discourse.
+\end{tabularx}
+\vspace{1em}
+
+Be aware that not all sources include zero in the natural numbers.
+
+
+\section{Logic}
+
+\renewcommand{\arraystretch}{1.2}
+\begin{tabularx}{\textwidth}{ccX}
+    Symbol & \LaTeX & Meaning \\
+    \hline
+    $\mathrm{T}$ & \texttt{{\textbackslash}mathrm\{T\}} & True. \\
+    $\mathrm{F}$ & \texttt{{\textbackslash}mathrm\{F\}} & False. \\
+    $\top$ & \texttt{{\textbackslash}top} & Top. Sometimes used as true. \\
+    $\bot$ & \texttt{{\textbackslash}bot} & Bottom. Sometimes used as false. \\
+    $P$ & \texttt{P} & Some proposition. \\
+    $Q$ & \texttt{Q} & Some other proposition. \\
+    $\neg P$ & \texttt{{\textbackslash}neg P} & Negation. True if $P$ is false. \\
+    $\overline{P}$ & \texttt{{\textbackslash}overline\{P\}} & Another syntax for negation. \\
+    $P \wedge Q$ & \texttt{P {\textbackslash}wedge Q} & Conjunction. True if both are true. \\
+    $P \vee Q$ & \texttt{P {\textbackslash}vee Q} & Disjunction. True if either is true. \\
+    $P \oplus Q$ & \texttt{P {\textbackslash}oplus Q} & Exclusive disjunction. True if exactly one is true. \\
+    $P \rightarrow Q$ & \texttt{P {\textbackslash}rightarrow Q} & Implication. True if $Q$ is true, or if $P$ is false. \\
+    $P \leftrightarrow Q$ & \texttt{P {\textbackslash}leftrightarrow Q} & Equivalence. Also known as ``iff'' or ``if and only if.'' \\
+    $p(x)$ & \texttt{p(x)} & Predicate. Yields true or false depending on its argument. \\
+    $\forall x (p(x))$ & \texttt{{\textbackslash}forall x (p(x))} & Universal quantifier. Property $p$ holds for all $x$. \\
+    $\exists x (p(x))$ & \texttt{{\textbackslash}exists x (p(x))} & Existential quantifier. There is at least one $x$ for which property $p$ holds. \\
+    $\exists! x (p(x))$ & \texttt{{\textbackslash}exists!\ x (p(x))} & Unique quantifier. There is exactly one $x$ for which property $p$ holds. \\
+    $\forall x : p(x)$ & \texttt{{\textbackslash}forall x :\ p(x)} & Alternative quantifier notation. \\
+    $\forall x . p(x)$ & \texttt{{\textbackslash}forall x .\ p(x)} & Yet another quantifier notation. \\
+    $P \equiv Q$ & \texttt{P {\textbackslash}equiv Q} & Metalogical equivalence. Propositions $P$ and $Q$ always have the same value. \\
+    $P \vdash Q$ & \texttt{P {\textbackslash}vdash Q} & Turnstile. Knowing $P$, conclude $Q$.
+\end{tabularx}
+
+
+\section{Sets}
+
+\renewcommand{\arraystretch}{1.2}
+\begin{tabularx}{\textwidth}{ccX}
+    Symbol & \LaTeX & Meaning \\
+    \hline
+    $\emptyset$ & \texttt{{\textbackslash}emptyset} & The empty set. \\
+    $\varnothing$ & \texttt{{\textbackslash}varnothing} & A rounder, cuddlier empty set. \\
+    $\{x\}$ & \texttt{{\textbackslash}\{x{\textbackslash}\}} & The set containing one item, $x$. \\
+    $\{x \mid p(x)\}$ & \texttt{{\textbackslash}\{x {\textbackslash}mid p(x){\textbackslash}\}} & The set of all $x$ for which $p(x)$ holds. \\
+    $(a, z)$ & \texttt{(a, z)} & The set of all $x$ such that $a < x < z$. \\
+    $[a, z]$ & \texttt{[a, z]} & The set of all $x$ such that $a \leq x \leq z$. \\
+    $[0, \infty)$ & \texttt{[0, {\textbackslash}infty)} & You can mix and match! \\
+    $A$ & \texttt{A} & Some arbitrary set. \\
+    $B$ & \texttt{B} & Some other arbitrary set. \\
+    $|A|$ & \texttt{|A|} & Cardinality. The number of items in $A$. \\
+    $\overline{A}$ & \texttt{{\textbackslash}overline\{A\}} & Complement. All items not in $A$. \\
+    $A \cap B$ & \texttt{A {\textbackslash}cap B} & Intersection. Items in both $A$ and $B$. \\
+    $A \cup B$ & \texttt{A {\textbackslash}cup B} & Union. Items in either $A$ or $B$. \\
+    $A \setminus B$ & \texttt{A {\textbackslash}setminus B} & Set subtraction. Items in $A$ but not $B$. \\
+    $A - B$ & \texttt{A - B} & Alternate notation for set subtraction. \\
+    $A \bigtriangleup B$ & \texttt{A {\textbackslash}bigtriangleup B} & Symmetric difference. Items in $A$ or $B$ but not both. \\
+    $x \in A$ & \texttt{x {\textbackslash}in A} & Element of. Set $A$ contains item $x$. \\
+    $A \subseteq B$ & \texttt{A {\textbackslash}subseteq B} & Subset. Set $B$ contains all the items that set $A$ does. \\
+    $A \subset B$ & \texttt{A {\textbackslash}subset B} & Strict subset. Set $B$ contains all the items that set $A$ does, and $A \neq B$. \\
+    $x \notin A$ & \texttt{x {\textbackslash}notin A} & Not an element. \\
+    $A \nsubseteq B$ & \texttt{A {\textbackslash}nsubseteq B} & Not a subset. \\
+    $A \not\subset B$ & \texttt{A {\textbackslash}not{\textbackslash}subset B} & Not a strict subset. \\
+    $A \times B$ & \texttt{A {\textbackslash}times B} & Cartesian product. A set that contains all pairs consisting of an item from set $A$ followed by an item from set $B$. \\
+    $A^n$ & \texttt{A{\textasciicircum}n} & Cartesian exponentiation. All $n$-tuples of items from set $A$. \\
+    $\wp(A)$ & \texttt{{\textbackslash}wp(A)} & Powerset. A set of all subsets of $A$.
+\end{tabularx}
+\vspace{2em}
+
+The subset operators can be reversed---made into superset operators---by replacing the \texttt{sub} part of their symbol names with \texttt{sup}.
+For example, \texttt{{\textbackslash}subseteq} ($\subseteq$) would become \texttt{{\textbackslash}supseteq} ($\supseteq$).
+The reverse of \texttt{{\textbackslash}in} ($\in$) is \texttt{{\textbackslash}ni} ($\ni$).
+
+
+\section{Functions}
+
+\renewcommand{\arraystretch}{1.2}
+\begin{tabularx}{\textwidth}{ccX}
+    Symbol & \LaTeX & Meaning \\
+    \hline
+    $f: A \rightarrow B$ & \texttt{f:\ A {\textbackslash}rightarrow B} & Type specification. Function $f$ maps items in set $A$ to items in set $B$. \\
+    $f(x) = x^2$ & \texttt{f(x) = x{\textasciicircum}2} & Function definition. The function $f$ maps its argument to its square. \\
+    $f^{-1}$ & \texttt{f{\textasciicircum}\{-1\}} & Function inversion. If $f(x) = y$ then $f^{-1}(y) = x$. \\
+    $f \circ g$ & \texttt{f {\textbackslash}circ g} & Function composition. If $h = f \circ g$ then $h(x) = f(g(x))$. \\
+    $x \mapsto x^2$ & \texttt{x {\textbackslash}mapsto x{\textasciicircum}2} & An anonymous function that maps its argument to its square.
+\end{tabularx}
+
+
+\section{Relations}
+
+\renewcommand{\arraystretch}{1.2}
+\begin{tabularx}{\textwidth}{ccX}
+    Symbol & \LaTeX & Meaning \\
+    \hline
+    $(a, b)$ & \texttt{(a, b)} & A tuple containing $a$ and $b$. \\
+    $a = b$ & \texttt{a = b} & Equality. \\
+    $a \approx b$ & \texttt{a {\textbackslash}approx b} & Approximate equality. \\
+    $a \neq b$ & \texttt{a {\textbackslash}neq b} & Inequality. \\
+    $a < b$ & \texttt{a < b} & Less than. \\
+    $a > b$ & \texttt{a > b} & Greater than. \\
+    $a \leq b$ & \texttt{a {\textbackslash}leq b} & Less than or equal to. \\
+    $a \geq b$ & \texttt{a {\textbackslash}geq b} & Greater than or equal to. \\
+    $a \nless b$ & \texttt{a {\textbackslash}nless b} & Not less than. \\
+    $a \ngtr b$ & \texttt{a {\textbackslash}ngtr b} & Not greater than. \\
+    $a \nleq b$ & \texttt{a {\textbackslash}nleq b} & Not less than or equal to. \\
+    $a \ngeq b$ & \texttt{a {\textbackslash}ngeq b} & Not greater than or equal to. \\
+    $a \mid b$ & \texttt{a {\textbackslash}mid b} & Divides. \\
+    $a \nmid b$ & \texttt{a {\textbackslash}nmid b} & Does not divide. \\
+    $a \equiv b$ & \texttt{a {\textbackslash}equiv b} & Equivalence. \\
+    $a \not\equiv b$ & \texttt{a {\textbackslash}not{\textbackslash}equiv b} & Non-equivalence. \\
+\end{tabularx}
+
+\end{document}

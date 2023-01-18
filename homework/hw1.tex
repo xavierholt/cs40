@@ -1,0 +1,111 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{enumitem}
+
+\title{CS 40 Homework 1}
+% Yeah, this is a hack...
+\author{Due Tuesday, January 24th}
+\date{Winter 2023}
+
+\begin{document}
+
+\maketitle
+
+\section{Encode}
+
+Write the following sentences as logical expressions.
+Create a variable for each atomic proposition, then use logical operators to connect your variables into longer expressions.
+Your atomic propositions should be positive (A \textit{is} B; C \textit{will} D) rather than negative (A \textit{is not} B; C \textit{will not} D); each expression will use at least one logical operator.
+
+\begin{enumerate}[label=\textbf{\alph*.}]
+    \item Amy is not a banker.
+    \item Bob speaks neither French nor Spanish.
+    \item Carrie and Derek like each other.
+    \item Erika will either buy a boat or a plane.
+    \item Fred will come to dinner if George does, but not otherwise.
+    \item Hailey might go to Macau, but only if Isabel will go too.
+\end{enumerate}
+
+
+\section{Decode}
+
+Assume the following propositions.
+
+\begin{itemize}
+    \setlength{\itemsep}{0pt}
+    \item $P = $ A particle was detected.
+    \item $Q = $ The poison was not released.
+    \item $R = $ The cat is dead.
+\end{itemize}
+
+\noindent
+Rewrite the following expressions in English.
+
+\begin{enumerate}[label=\textbf{\alph*.}]
+    \item $\neg P$
+    \item $R \oplus Q$
+    \item $P \rightarrow \neg Q$
+    \item $\neg R \rightarrow Q$
+    \item $Q \leftrightarrow \neg P$
+    \item $P \wedge \neg P$
+\end{enumerate}
+
+
+\section{Truth Tables}
+
+Construct truth tables for the following expressions.
+Add one row (or column) to the table for every operator as it is introduced.
+Label each expression as a tautology, contradiction, or contingency.
+
+\begin{enumerate}[label=\textbf{\alph*.}]
+    \item $(p \rightarrow q) \leftrightarrow (\neg q \wedge p)$
+    \item $(p \rightarrow q) \leftrightarrow (\neg q \rightarrow \neg p)$
+    \item $(p \rightarrow q) \rightarrow (q \rightarrow p)$
+\end{enumerate}
+
+\noindent
+Construct truth tables for the following deductions.
+Add one row (or column) for every operator as it is introduced.
+Label each deduction as valid or invalid.
+
+\begin{enumerate}[label=\textbf{\alph*.}]
+    \setcounter{enumi}{3}
+    \item $P \vee Q, \neg Q \vdash P$
+    \item $P, P \rightarrow Q \vdash Q$
+    \item $\neg P, P \rightarrow Q \vdash \neg Q$
+\end{enumerate}
+
+
+\section{Operators}
+
+The logical operators that you're familiar with are convenient because they correspond nicely to natural language.
+However, not all of them are necessary.
+In fact, you can build an equivalent logic system with only a single operator.
+Consider the operator $a \downarrow b \equiv \neg(a \vee b)$.
+Show that the following expressions can be rewritten using only the $\downarrow$ operator.
+
+\begin{enumerate}[label=\textbf{\alph*.}]
+    \setlength{\itemsep}{0pt}
+    \item $\neg R$
+    \item $L \wedge R$
+    \item $L \vee R$
+    \item $L \oplus R$
+    \item $L \rightarrow R$
+    \item $L \leftrightarrow R$
+\end{enumerate}
+
+
+\section{Limitations}
+
+There are some situations that can't be properly modeled in the logic we've discussed in class.
+Assuming that the following premises are all true, use them to construct a sound argument---then argue that that argument reaches an unrealistic conclusion.
+
+\begin{itemize}
+    \setlength{\itemsep}{0pt}
+    \item If I have at least five dollars, I can buy cake.
+    \item If I have at least five dollars, I can buy beer.
+    \item If I have exactly five dollars, I have at least five dollars.
+    \item I have exactly five dollars.
+\end{itemize}
+
+\end{document}
