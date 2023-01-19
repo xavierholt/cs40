@@ -1,0 +1,91 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+
+\title{CS 40 Logic Tables}
+\author{Kevin Burk}
+\date{Winter 2023}
+
+\begin{document}
+
+\maketitle
+
+You can use the inference rules in Table~\ref{deduction} to construct proofs.
+Each inference rule has a set of premises, $P_1, P_2, ..., P_n$, and a conclusion, $C$.
+If you know that a set of propositions that match a rule's premises are true, then that rule's conclusion must be true as well.
+
+Additionally, if you know a proposition is true, you also know that all logically equivalent propositions are also true.
+Table~\ref{equivalence} lists some useful equivalence relationships.
+Unlike inference rules, these are bidirectional.
+
+Neither table is complete; there are many other valid rules.
+To prove that a new inference rule is valid, show that the proposition $P_1 \wedge P_2 \wedge ... \wedge P_n \rightarrow C$ is a tautology.
+To prove that any two propositions $Q_1$ and $Q_2$ are equivalent, show that the proposition $Q_1 \leftrightarrow Q_2$ is a tautology.
+
+\vspace{2em}
+\section{Rules of Inference}
+\label{deduction}
+
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\textwidth}{ccccX}
+   Premise 1 & Premise 2 & & Conclusion & Rule Name \\
+    \hline
+    %& & $\vdash$ & $\top$ \\
+    $P$ & & $\vdash$ & $P \vee Q$ & Addition \\
+    $P \wedge Q$ & & $\vdash$ & $P$ & Simplification \\
+    $P$ & $Q$ & $\vdash$ & $P \wedge Q$ & Conjunction \\
+    $P \rightarrow Q$ & $P$ & $\vdash$ & $Q$ & Modus Ponens \\
+    $P \rightarrow Q$ & $\neg Q$ & $\vdash$ & $\neg P$ & Modus Tollens \\
+    $P \rightarrow Q$ & $Q \rightarrow R$ & $\vdash$ & $P \rightarrow R$ & Hypothetical Syllogism \\
+    $P \vee Q$ & $\neg P$ & $\vdash$ & $Q$ & Disjunctive Syllogism \\
+    $P \vee Q$ & $\neg P \vee R$ & $\vdash$ & $Q \vee R$ & Resolution \\
+\end{tabularx}
+
+\section{Logical Equivalences}
+\label{equivalence}
+
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\textwidth}{cccX}
+    Proposition 1 & & Proposition 2 & Property Name \\
+    \hline
+    $P \wedge \top$ & $\equiv$ & $P$ & Identity \\
+    $P \vee \bot$ & $\equiv$ & $P$ & Identity \\
+    $P \wedge \bot$ & $\equiv$ & $\bot$ & Domination \\
+    $P \vee \top$ & $\equiv$ & $\top$ & Domination \\
+    $P \wedge P$ & $\equiv$ & $P$ & Idempotence \\
+    $P \vee P$ & $\equiv$ & $P$ & Idempotence \\
+    $\neg (\neg P)$ & $\equiv$ & $P$ & Double Negation\\
+    $P \wedge Q$ & $\equiv$ & $Q \wedge P$ & Commutativity \\
+    $P \vee Q$ & $\equiv$ & $Q \vee P$ & Commutativity \\
+    $P \wedge (Q \wedge R)$ & $\equiv$ & $(P \wedge Q) \wedge R$ & Associativity\\
+    $P \vee (Q \vee R)$ & $\equiv$ & $(P \vee Q) \vee R$ & Associativity \\
+    $P \wedge (Q \vee R)$ & $\equiv$ & $(P \wedge Q) \vee (P \wedge R)$ & Distributivity \\
+    $P \vee (Q \wedge R)$ & $\equiv$ & $(P \vee Q) \wedge (P \vee R)$ & Distributivity \\
+    $\neg (P \wedge Q)$ & $\equiv$ & $\neg P \vee \neg Q$ & De Morgan's Law \\
+    $\neg (P \vee Q)$ & $\equiv$ & $\neg P \wedge \neg Q$ & De Morgan's Law \\
+    $P \wedge (P \vee Q)$ & $\equiv$ & $P$ & Absorption \\
+    $P \vee (P \wedge Q)$ & $\equiv$ & $P$ & Absorption \\
+    $P \wedge \neg P$ & $\equiv$ & $\bot$ & Negation \\
+    $P \vee \neg P$ & $\equiv$ & $\top$ & Negation \\
+    \hline
+    $P \rightarrow Q$ & $\equiv$ & $Q \vee \neg P$ \\
+    $P \rightarrow Q$ & $\equiv$ & $\neg Q \rightarrow \neg P$ \\
+    $P \wedge Q$ & $\equiv$ & $\neg (P \rightarrow \neg Q)$ \\
+    $P \vee Q$ & $\equiv$ & $\neg P \rightarrow Q$ \\
+    $\neg (P \rightarrow Q)$ & $\equiv$ & $P \wedge \neg Q$ \\
+    $(P \rightarrow Q) \wedge (P \rightarrow R)$ & $\equiv$ & $P \rightarrow (Q \wedge R)$ \\
+    $(P \rightarrow Q) \vee (P \rightarrow R)$ & $\equiv$ & $P \rightarrow (Q \vee R)$ \\
+    $(P \rightarrow R) \wedge (Q \rightarrow R)$ & $\equiv$ & $(P \vee Q) \rightarrow R$ \\
+    $(P \rightarrow R) \vee (Q \rightarrow R)$ & $\equiv$ & $(P \wedge Q) \rightarrow R$ \\
+    \hline
+    $P \leftrightarrow Q$ & $\equiv$ & $Q \leftrightarrow P$ \\
+    $P \leftrightarrow Q$ & $\equiv$ & $\neg P \leftrightarrow \neg Q$ \\
+    $P \leftrightarrow Q$ & $\equiv$ & $(P \rightarrow Q) \wedge (Q \rightarrow P)$ \\
+    $P \leftrightarrow Q$ & $\equiv$ & $(P \wedge Q) \vee (\neg P \wedge \neg Q)$ \\
+    $\neg (P \leftrightarrow Q)$ & $\equiv$ & $P \leftrightarrow \neg Q$ \\
+    $\neg (P \leftrightarrow Q)$ & $\equiv$ & $P \oplus Q$ \\
+\end{tabularx}
+
+\end{document}
