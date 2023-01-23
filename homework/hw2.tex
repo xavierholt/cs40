@@ -1,0 +1,131 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb}
+\usepackage{enumitem}
+
+\title{CS 40 Homework 2}
+% Yeah, this is a hack...
+\author{Due Monday, January 30th}
+\date{Winter 2023}
+
+\begin{document}
+
+\maketitle
+
+\section{Decode}
+
+The following are sets.
+
+\begin{itemize}
+    \setlength{\itemsep}{0pt}
+    \item $E = $ Edible things.
+    \item $L = $ Things that Lisa likes.
+    \item $M = $ Meats.
+    \item $P = $ Poisons.
+    \item $Y = $ Yogurts.
+\end{itemize}
+
+\noindent
+Rewrite the following expressions in English.
+
+\begin{enumerate}[label=\textbf{\alph*.}]
+    \setlength{\itemsep}{0pt}
+    \item $L = \emptyset$
+    \item $M \subseteq E$
+    \item $L = P \cap Y$
+    \item $Y \setminus E \neq \emptyset$
+    \item $L = E \cap \overline{M \cup P}$
+    \item $M \bigtriangleup Y = M \cup Y$
+\end{enumerate}
+
+
+\section{Encode}
+
+Write the following sentences in set notation.
+Define variables for any sets you need in advance (do this once; use these variables for the entire question).
+Then rewrite the following sentences using only your variables, set operators, and equalities/inequalities.
+Do not use any logical operators.
+
+\begin{enumerate}[label=\textbf{\alph*.}]
+    \setlength{\itemsep}{0pt}
+    \item Some living things can fly.
+    \item Not all flying things are alive.
+    \item All crawling things are living things.
+    \item Airplanes can fly, but they are not alive.
+    \item Bees are living things that can fly and crawl.
+    \item Dirigibles are not living things, and cannot crawl.
+\end{enumerate}
+
+
+\section{Proofreading}
+
+The following proofs are unsound.
+Explain why.
+
+\begin{enumerate}[label=\textbf{\alph*.}]
+    \item My parrot is not a mammal.
+    \begin{enumerate}[label={(\arabic*})]
+        \setlength{\itemsep}{0pt}
+        \item Everything with four legs is a mammal.
+        \item My parrot has two legs.
+        \item Therefore, my parrot is not a mammal.
+    \end{enumerate}
+
+    \item Today is Saturday.
+
+    I have a neighbor who plays tennis a lot.
+    His name's Bob.
+    Every Saturday, as long as it's sunny, he goes to our local park and plays tennis.
+    Earlier this morning, I didn't know what day it was, but I knew it was the weekend, and it was sunny, so I went for a walk.
+    Then I saw Bob playing tennis in the park, so I knew it must be Saturday.
+
+    \item All even numbers are prime.
+    \begin{enumerate}[label={(\arabic*})]
+        \setlength{\itemsep}{0pt}
+        \item Let $E(x)$ be the proposition ``$x$ is even.''
+        \item Let $P(x)$ be the proposition ``$x$ is prime.''
+        \item \label{taut} We know that $(A \rightarrow B) \vee (B \rightarrow A)$; this is a tautology.
+        \item \label{subd} Substituting into \ref{taut}, we get $(E(x) \rightarrow P(x)) \vee (P(x) \rightarrow E(x))$.
+        \item \label{cont} The number 13 is prime but not even, so $P(x) \rightarrow E(x)$ must be false.
+        \item By disjunctive syllogism from \ref{subd} and \ref{cont}, we can conclude that $E(x) \rightarrow P(x)$ must be true.
+        \item Therefore all even numbers are prime.
+    \end{enumerate}
+\end{enumerate}
+
+
+\section{Addition}
+
+Prove that for every positive irrational number $x$, there is at least one other positive irrational number $y$ such that $x$ and $y$ sum to an integer.
+
+
+\section{Division}
+
+Prove the following statement.
+
+$$
+\forall y \in \mathbb{R} \setminus \mathbb{Q} \left(
+    \forall x \in \mathbb{Q} \left(
+        x \neq 0
+        \rightarrow
+        \frac{x}{y} \in \mathbb{R \setminus Q}
+    \right)
+\right)
+$$
+
+
+\section{Multiplication}
+
+Let $\Pi(A)$ be the product of the elements in set $A$.
+Prove the following statement.
+
+$$
+\forall S \left(
+    S \subseteq \mathbb{Z} \wedge |S| \geq 3
+    \rightarrow
+    \exists S' \subseteq S \left(
+        S' \neq \emptyset \wedge \Pi(S') \in \mathbb{Z}^+
+    \right)
+\right)
+$$
+
+\end{document}
