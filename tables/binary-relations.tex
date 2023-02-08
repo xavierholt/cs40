@@ -1,0 +1,62 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+
+\title{Properties of Binary Relations}
+\author{Kevin Burk}
+\date{Winter 2023}
+
+\begin{document}
+
+\maketitle
+
+\section{Properties}
+
+These definitions refer to a binary relation $\sim$ defined over the elements of set $S$.
+
+\begin{itemize}
+    \item The relation is \textbf{reflexive} if every item is related to itself:
+    $\forall x \in S : x \sim x$
+
+    \item The relation is \textbf{irreflexive} if no item is related to itself:
+    $\forall x \in S : x \not\sim x$
+
+    \item The relation is \textbf{symmetric} if all pairs of related items are related in both directions:
+    $\forall x, y \in S : (x \sim y) \leftrightarrow (y \sim x)$
+
+    \item The relation is \textbf{antisymmetric} if no pair of distinct items is related in both directions:
+    $\forall x, y \in S : (x \sim y) \wedge (y \sim x) \rightarrow (x = y)$
+
+    \item The relation is \textbf{asymmetric} if any pair of related items is related in at most one direction:
+    $\forall x, y \in S : (x \sim y) \rightarrow (y \not\sim x)$
+
+    \item The relation is \textbf{transitive} if it allows for ``hypothetical syllogism'' style deductions:
+    $\forall x, y, z \in S : (x \sim y) \wedge (y \sim z) \rightarrow (x \sim z)$
+
+    \item The relation is \textbf{connected} if all pairs of distinct items are related in at least one direction:
+    $\forall x, y \in S : (x \neq y) \rightarrow (x \sim y) \vee (y \sim x)$
+
+    \item The relation is \textbf{strongly connected} if all items are related in at least one direction:
+    $\forall x, y \in S : (x \sim y) \vee (y \sim x)$
+\end{itemize}
+
+
+\section{Categories}
+
+Relations with certain combinations of properties fall into useful categories.
+
+\begin{itemize}
+    \item An \textbf{equivalence relation} is reflexive, symmetric, and transitive.
+
+    \item A \textbf{partial order} is reflexive, antisymmetric, and transitive.
+
+    \item A \textbf{strict partial order} is asymmetric and transitive.
+
+    \item A \textbf{total order} is reflexive, antisymmetric, transitive, and connected.
+
+    \item A \textbf{strict total order} is asymmetric, transitive, and connected.
+\end{itemize}
+
+\end{document}

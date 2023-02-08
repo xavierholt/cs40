@@ -1,0 +1,143 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{tabularx}
+
+\title{CS 40 Homework 3}
+% Yeah, this is a hack...
+\author{Due Tuesday, February 14th}
+\date{Winter 2023}
+
+\begin{document}
+
+\maketitle
+
+\noindent
+A note on proofs:
+Make sure you state what you're proving, what proof method you're using, and---once your proof is complete---what your conclusion is.
+If you use a lot of symbols, a summary of your approach may be helpful to the reader.
+
+\section{Inclusion}
+
+\begin{multicols}{3}
+\begin{itemize}
+    % \setlength{\itemsep}{0pt}
+    \item $A = \emptyset$
+    \item $B = \{0\}$
+    \item $C = \{\emptyset\}$
+    \item $D = \{0, \emptyset\}$
+    \item $E = \{\{0\}\}$
+    \item $F = \{\{\emptyset\}\}$
+    \item $G = \wp(\emptyset)$
+    \item $H = \wp(\{\emptyset\})$
+    \item $I = \wp(\{0, \emptyset\})$
+\end{itemize}
+\end{multicols}
+
+\noindent
+Let $X$ be a set containing the nine sets defined above.
+
+\begin{enumerate}[label=\textbf{\alph*.}]
+    % \setlength{\itemsep}{0pt}
+    \item For each set $S$ in $\{G, H, I\}$, list every set $T$ in $X$ for which $T \in S$.
+    \item For each set $S$ in $\{G, H, I\}$, list every set $T$ in $X$ for which $T \subset S$.
+\end{enumerate}
+
+
+\section{Counting}
+
+Let $P = \{2, 3, 5, 7, 11, ..., 89, 97\}$ be a set containing the 25 prime numbers less than 100.
+Write an expression that evaluates to the number of elements in $P^3 \times \wp(\wp(P \times P))$.
+Explain your answer.
+
+
+\section{Powersets}
+
+Prove or disprove the following statements about arbitrary sets $A$ and $B$.
+
+\begin{enumerate}[label=\textbf{\alph*.}]
+    % \setlength{\itemsep}{0pt}
+    \item $\forall A, B : \wp(A) \cap \wp(B) = \wp(A \cap B)$
+    \item $\forall A, B : \wp(A) \cup \wp(B) = \wp(A \cup B)$
+\end{enumerate}
+
+\pagebreak
+\section{Tuples}
+
+Tuples can be used as ``record'' datatypes.
+These are collections of related information, like structs or classes in a program, or rows in a database table.
+
+Let $C$ be a set of cities and $P$ be a set of people.
+Give an example of data that would be stored as each of the following types of tuples.
+
+\begin{multicols}{3}
+\begin{enumerate}[label=\textbf{\alph*.}]
+    % \setlength{\itemsep}{0pt}
+    \item $P \times \mathbb{Z}$
+    \item $C \times \mathbb{R}$
+    \item $P \times P$
+    \item $P \times C \times \mathbb{N}$
+    \item $C \times C \times \mathbb{N}$
+    \item $C \times \mathbb{R} \times \mathbb{R}$
+\end{enumerate}
+\end{multicols}
+
+\noindent
+Make sure you use the correct types of integers.
+Don't use $\mathbb{Z}$ to store age, for example, because that would imply that age might be negative; age should be stored as a natural number.
+You can ignore the distinction between $\mathbb{Q}$ and $\mathbb{R}$
+
+
+\section{Relations}
+
+You can think of the binary operators from propositional logic as relations on the set of Booleans.
+In this interpretation, two truth values are ``related'' by an operator if and only if the result of that operation is true.
+\vspace{1em}
+
+\noindent
+\textbf{a.}
+Write the following operations as binary relations.
+Use truth set form, with each relation represented by the subset of $\mathbb{B} \times \mathbb{B}$ where the relation holds.
+\vspace{1em}
+
+\begin{centering}
+\begin{tabularx}{3in}{XXXXX}
+    $\wedge$ & $\vee$ & $\oplus$ & $\rightarrow$ & $\leftrightarrow$ \\
+\end{tabularx}\par
+\end{centering}
+\vspace{1em}
+
+\noindent
+\textbf{b.}
+Then determine which of the following properties apply to each operation.
+You don't need to justify your answers.
+
+\begin{multicols}{3}
+\begin{itemize}
+    % \setlength{\itemsep}{0pt}
+    \item Reflexive
+    \item Irreflexive
+    \item Symmetric
+    \item Antisymmetric
+    \item Asymmetric
+    \item Transitive
+\end{itemize}
+\end{multicols}
+
+
+\section{Equivalence}
+
+Consider approximate equality $(a \approx b)$ as a binary relation on the real numbers.
+You might expect this to be an equivalence relation---but for this relation to be useful, it cannot be an equivalence relation.
+Explain why not.
+
+
+\section{Cycles}
+
+Let $\succ$ be a binary relation.
+We say that $\succ$ contains a cycle if there is a series of elements such that $a \succ b \succ c \succ ... \succ z \succ a$.
+Prove that if $\succ$ is a strict partial order, it cannot contain a cycle.
+
+\end{document}
