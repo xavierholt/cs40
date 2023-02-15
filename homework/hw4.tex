@@ -1,0 +1,73 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{tabularx}
+
+\title{CS 40 Homework 4}
+% Yeah, this is a hack...
+\author{Due Tuesday, February 21st}
+\date{Winter 2023}
+
+\begin{document}
+
+\maketitle
+
+% \noindent
+% A note on proofs:
+% Make sure you state what you're proving, what proof method you're using, and---once your proof is complete---what your conclusion is.
+% If you use a lot of symbols, a summary of your approach may be helpful to the reader.
+
+% \vspace{1em}
+\section{Types}
+
+The following functions take real numbers as arguments wherever it makes sense to do so, and integers otherwise.
+Write their type signatures.
+Be precise!
+
+\begin{multicols}{2}
+\begin{enumerate}[label=\textbf{\alph*.}]
+    \setlength{\itemsep}{0pt}
+    \item $f(x) = \ln(x)$
+    \item $f(x, y) = \gcd (x, y)$
+    \item $f(x) = \sin (x)$
+    \item $f(x, y) = (x \leq y)$
+    \item $f(x) = \text{the positive divisors of } x$
+    \item $f(x) = x!$
+\end{enumerate}
+\end{multicols}
+
+
+\section{Relations}
+
+Let $f : A \rightarrow B$ be a function.
+Let $\sim$ be a relation on $A$ such that $a \sim b$ if and only if $f(a) = f(b)$.
+Prove that $\sim$ is an equivalence relation.
+
+
+\section{Cancellation}
+
+Let $f$, $g$, and $h$ be functions.
+Show that the following inference rules are simultaneously valid if and only if $f$ is a bijection.
+
+\vspace{-1em}
+\begin{eqnarray*}
+f \circ g = f \circ h & \vdash & g = h \\
+g \circ f = h \circ f & \vdash & g = h
+\end{eqnarray*}
+
+
+\section{Counting}
+
+Prove that there are as many square numbers as there are integers.
+
+
+\section{Cantor's Theorem}
+
+Prove that $|S| < |\wp(S)|$ for any set $S$.
+Do this by proving that $f : S \rightarrow \wp(S)$ cannot be surjective.
+Hint: consider the set $\{x \in S \mid x \notin f(x)\}$.
+
+\end{document}
