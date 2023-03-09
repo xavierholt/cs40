@@ -1,0 +1,145 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{multicol}
+\usepackage{tabularx}
+
+% https://tex.stackexchange.com/a/286470
+\font\domino=domino
+\def\die#1{{\domino#1}}
+
+\title{CS 40 Homework 6}
+% Yeah, this is a hack...
+\author{Due Wednesday, March 15th}
+\date{Winter 2023}
+
+\begin{document}
+
+\maketitle
+
+% \noindent
+% A note on proofs:
+% Make sure you state what you're proving, what proof method you're using, and---once your proof is complete---what your conclusion is.
+% If you use a lot of symbols, a summary of your approach may be helpful to the reader.
+
+
+\section{Dice I}
+
+You have some standard six-sided dice.
+What is the probability of rolling a total of ten when you roll...
+
+\begin{enumerate}[label=\textbf{\alph*.}]
+    % \setlength{\itemsep}{0pt}
+    \item ...one die?
+    \item ...two dice?
+    \item ...three dice?
+\end{enumerate}
+
+
+\section{Dice II}
+
+Alice and Bob like to play a very simple dice game:
+Each player gets one die; they roll their dice, and whoever rolls the higher number wins.
+If it's a tie, they re-roll until someone wins.
+
+Normally they play at Alice's house.
+Alice has standard dice, so the game is fair: both players are equally likely to win.
+But today they're playing at Bob's house, and Bob's dice are unusual.
+There are three dice to choose from:
+
+\begin{itemize}
+    \item Die X: \die1, \die1, \die3, \die5, \die5, \die6
+    \item Die Y: \die2, \die3, \die3, \die4, \die4, \die5
+    \item Die Z: \die1, \die2, \die2, \die4, \die6, \die6
+\end{itemize}
+\vspace{4pt}
+
+\noindent
+\textbf{a.}
+What is the expected value of each die?
+\vspace{1em}
+
+\noindent
+\textbf{b.}
+Consider each possible pair of dice.
+What is the probability of each die winning, tying, or losing a roll?
+\vspace{1em}
+
+\noindent
+\textbf{c.}
+How can Alice give herself an advantage?
+
+
+\section{Coins I}
+
+You have an unbalanced coin:
+When you flip the coin, getting heads (55\%) is slightly more likely than getting tails (45\%).
+You flip this coin seven times.
+
+\begin{enumerate}[label=\textbf{\alph*.}]
+    % \setlength{\itemsep}{0pt}
+    \item What is the probability you get seven heads?
+    \item What is the probability you get at least one heads?
+    \item What is the probability you get exactly three heads?
+    \item What is the probability you get more heads than tails?
+\end{enumerate}
+
+\section{Coins II}
+
+Consider the following gambling game:
+You pay a one-time fee, and then you flip a fair coin.
+Every time you flip heads, you get one dollar and you get to flip again.
+As soon as you flip tails, the game is over.
+
+What fee would set the expected value of this game to zero?
+
+
+\section{Doors}
+
+A game show host shows you two doors, and asks you to pick one.
+Both doors have money behind them, any you get to keep whatever you find behind the door you choose.
+There's no way to tell what's behind each door, so you pick one at random.
+
+Then the host tells you that one door has twice as much money behind it than the other.
+He asks if you would like to switch doors.
+You figure:
+
+\begin{enumerate}[label=\textbf{\roman*.}]
+    \item Your current door contains some unknown amount of money.
+    You don't know how much, so you call it $n$ dollars.
+
+    \item If you switch doors, you might double your money, but alternatively, you might loose half of it.
+
+    \item Since you chose at random, both of these possibilities are equally likely.
+
+    \item You calculate the expected value of switching, and get:
+    $$\left(\frac{1}{2} \times 2n\right) + \left(\frac{1}{2} \times \frac{n}{2}\right) \, = \, n + \frac{n}{4} \, = \, 1.25n$$
+
+    \item This is higher than your current value of $n$, so you should switch.
+\end{enumerate}
+
+\noindent
+But then you realize that if you did switch doors, the host could ask you if you wanted to switch a second time---and you would use the exact same logic and decide to switch again.
+In fact, you could end up switching forever.
+This is absurd, so there must be something wrong with your logic.
+What was the flaw?
+
+
+\section{Werewolf}
+
+Amy thinks her boyfriend might be a werewolf.
+She knows that only 1 in 10,000 people in the general population are werewolves, but she wants to be sure.
+So she buys a werewolf test kit---the good brand, with a 98\% true positive rate and a 97\% true negative rate---and tests him while he's sleeping.
+
+\begin{enumerate}[label=\textbf{\alph*}]
+    \item If the test comes back negative, what is the probability that he really is a werewolf?
+
+    \item If the test comes back positive, what is the probability that he really is a werewolf?
+
+    \item If three subsequent tests all come back positive, what's the probability that he's a werewolf?
+\end{enumerate}
+
+\end{document}
